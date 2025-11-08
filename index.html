@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -13,7 +14,6 @@
     --accent:#6ee7ff;
     --accent-2:#7c4dff;
     --border:#232a34;
-    --ok:#22c55e;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -27,7 +27,7 @@
   a{color:inherit;text-decoration:none}
   img{display:block;max-width:100%;height:auto;border-radius:14px}
   .container{width:min(1200px,92%);margin:0 auto}
-  /* 1. HEADER (Sticky) */
+
   header{
     position:sticky;top:0;z-index:50;
     backdrop-filter:saturate(140%) blur(8px);
@@ -39,7 +39,7 @@
   nav ul{display:flex;gap:22px;list-style:none;padding:0;margin:0}
   nav a{padding:8px 10px;border-radius:10px;color:var(--muted)}
   nav a:hover, nav a.active{color:var(--text);background:var(--card)}
-  /* Hamburger */
+
   .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
   .hamburger span{width:26px;height:2px;background:var(--text);transition:.3s}
   .mobile-menu{display:none;flex-direction:column;gap:10px;padding:10px 0}
@@ -47,12 +47,12 @@
   .mobile-open .hamburger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
   .mobile-open .hamburger span:nth-child(2){opacity:0}
   .mobile-open .hamburger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-  /* Sections common */
+
   section{padding:70px 0;border-top:1px solid var(--border)}
   section:first-of-type{border-top:none}
   h2.section-title{font-size:2rem;margin:0 0 16px}
   p.section-sub{color:var(--muted);margin:0 0 28px}
-  /* 2. HERO */
+
   #home{
     padding:110px 0 90px;
     background:
@@ -73,7 +73,7 @@
   .hero-media{
     border:1px solid var(--border);background:var(--bg-soft);padding:14px;border-radius:16px
   }
-  /* 3. SERVICES */
+
   .grid{display:grid;gap:18px}
   .services .grid{grid-template-columns:repeat(3,1fr)}
   .card{
@@ -82,31 +82,39 @@
   .card-body{padding:14px 14px 18px}
   .card h3{margin:10px 0 6px;font-size:1.05rem}
   .card p{margin:0;color:var(--muted)}
-  /* 4. PORTFOLIO */
+
   .portfolio .grid{grid-template-columns:repeat(3,1fr)}
   .portfolio .meta{display:flex;gap:10px;align-items:center;color:var(--muted);font-size:.9rem;margin-top:8px}
-  /* 5. SOCIAL */
+
   .social .grid{grid-template-columns:repeat(3,1fr)}
-  .instagram-media{background:var(--bg-soft);border:1px solid var(--border);border-radius:16px;overflow:hidden}
-  /* 6. TEAM */
+  iframe.social-embed{
+    width:100%;
+    aspect-ratio:9/16;
+    border:none;
+    border-radius:16px;
+    background:var(--bg-soft);
+  }
+
   .team .grid{grid-template-columns:repeat(4,1fr)}
   .member .role{color:var(--accent)}
-  /* 7. TESTIMONIALS */
-  .testimonials .grid{grid-template-columns:repeat(3,1fr)}
-  .quote{font-size:.98rem}
-  .person{display:flex;align-items:center;gap:10px;margin-top:12px}
-  .avatar{width:42px;height:42px;border-radius:50%;object-fit:cover;border:1px solid var(--border)}
-  /* 8. BLOG (Ghost) */
+
+  .testimonials .grid{grid-template-columns:1fr}
+  iframe.testimonial-video{
+    width:100%;
+    aspect-ratio:9/16;
+    border:none;
+    border-radius:16px;
+    background:var(--bg-soft);
+  }
+
   .blog-frame{width:100%;min-height:700px;border:1px solid var(--border);border-radius:16px}
-  /* 9. PRICING */
-  .pricing .grid{grid-template-columns:repeat(3,1fr)}
+
+  .pricing .grid{grid-template-columns:1fr}
   .price-card{display:flex;flex-direction:column;gap:10px}
   .price{font-size:1.6rem;font-weight:800}
   .features{color:var(--muted);padding-left:18px}
   .features li{margin:6px 0}
-  .badge{font-size:.75rem;color:#061014;background:var(--accent);padding:4px 8px;border-radius:999px;display:inline-block;font-weight:700}
-  .subscribe{margin-top:auto}
-  /* 10. CONTACT + footer */
+
   .contact-actions{display:flex;gap:12px;flex-wrap:wrap}
   .icon-btn{
     display:inline-flex;align-items:center;gap:8px;padding:12px 14px;border-radius:12px;
@@ -114,7 +122,7 @@
   }
   .icon{width:18px;height:18px;display:inline-block}
   footer{padding:28px 0;color:var(--muted)}
-  /* Responsive */
+
   @media (max-width:1024px){
     .team .grid{grid-template-columns:repeat(3,1fr)}
   }
@@ -124,347 +132,308 @@
   @media (max-width:768px){
     nav ul{display:none}
     .hamburger{display:flex}
-    .services .grid,.portfolio .grid,.social .grid,.team .grid,.testimonials .grid,.pricing .grid{grid-template-columns:1fr}
+    .services .grid,.portfolio .grid,.social .grid,.team .grid,.pricing .grid{grid-template-columns:1fr}
     section{padding:60px 0}
     #home{padding:90px 0 70px}
   }
 </style>
 </head>
 <body>
-  <!-- 1. HEADER (Sticky) -->
-  <header>
-    <div class="container nav-wrap">
-      <div class="logo">Agency</div>
-      <nav aria-label="Primary">
-        <ul id="desktopNav">
-          <li><a href="#home" class="nav-link active">Home</a></li>
-          <li><a href="#services" class="nav-link">Services</a></li>
-          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-          <li><a href="#social" class="nav-link">Social</a></li>
-          <li><a href="#team" class="nav-link">Team</a></li>
-          <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
-          <li><a href="#blogs" class="nav-link">Blogs</a></li>
-          <li><a href="#pricing" class="nav-link">Pricing</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="hamburger" id="hamburger" aria-label="Open Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </div>
-    </div>
-    <div class="container mobile-menu" id="mobileMenu">
-      <a href="#home" class="nav-link">Home</a>
-      <a href="#services" class="nav-link">Services</a>
-      <a href="#portfolio" class="nav-link">Portfolio</a>
-      <a href="#social" class="nav-link">Social</a>
-      <a href="#team" class="nav-link">Team</a>
-      <a href="#testimonials" class="nav-link">Testimonials</a>
-      <a href="#blogs" class="nav-link">Blogs</a>
-      <a href="#pricing" class="nav-link">Pricing</a>
-      <a href="#contact" class="nav-link">Contact</a>
-    </div>
-  </header>  <!-- 2. HERO SECTION -->  <section id="home">
-    <div class="container hero">
-      <div>
-        <h1>Design. Launch. Grow.</h1>
-        <p>We build fast, mobile-first websites and content that convert. From brand strategy to paid growth, our team ships clean design and measurable results.</p>
-        <div class="btns">
-          <a href="#pricing" class="btn primary">Subscribe Now</a>
-          <a href="#portfolio" class="btn">See Portfolio</a>
-        </div>
-      </div>
-      <div class="hero-media">
-        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" alt="Modern workspace with code and design monitor"/>
-      </div>
-    </div>
-  </section>  <!-- 3. SERVICES SECTION -->  <section id="services" class="services">
-    <div class="container">
-      <h2 class="section-title">Services</h2>
-      <p class="section-sub">Clear deliverables. Fixed timelines. Senior talent only.</p>
-      <div class="grid">
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=960&q=80" alt="Team planning design sprint"/>
-          <div class="card-body">
-            <h3>Brand Strategy & Positioning</h3>
-            <p>Messaging, visual direction, and market positioning that make you unmistakable in your category.</p>
-          </div>
-        </article>
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=960&q=80" alt="Developer coding responsive website"/>
-          <div class="card-body">
-            <h3>Web Design & Development</h3>
-            <p>Lightning-fast, accessible websites built with clean HTML, CSS, and vanilla JS. No bloat. No guesswork.</p>
-          </div>
-        </article>
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1515524738708-327f6b0037a7?auto=format&fit=crop&w=960&q=80" alt="Analytics dashboard on laptop"/>
-          <div class="card-body">
-            <h3>Performance SEO</h3>
-            <p>Technical audits, keyword strategy, and content systems that compound organic traffic month over month.</p>
-          </div>
-        </article>
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=960&q=80" alt="Marketing team brainstorming ideas"/>
-          <div class="card-body">
-            <h3>Paid Growth</h3>
-            <p>High-ROI ad creative and landing pages engineered for conversions across Meta, Google, and YouTube.</p>
-          </div>
-        </article>
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&w=960&q=80" alt="Content creation studio"/>
-          <div class="card-body">
-            <h3>Content & Reels</h3>
-            <p>Short-form video and UGC packages designed to punch above their weight and build brand recall.</p>
-          </div>
-        </article>
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=960&q=80" alt="UI/UX prototypes on a desk"/>
-          <div class="card-body">
-            <h3>UI/UX Audits</h3>
-            <p>Actionable UX reviews with heatmap insights, funnel fixes, and scorecards to lift conversion quickly.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>  <!-- 4. PORTFOLIO SECTION -->  <section id="portfolio" class="portfolio">
-    <div class="container">
-      <h2 class="section-title">Portfolio</h2>
-      <p class="section-sub">A few projects we’ve shipped recently.</p>
-      <div class="grid">
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1502882705085-cb9f4fe6c8d0?auto=format&fit=crop&w=1200&q=80" alt="SaaS dashboard UI"/>
-          <div class="card-body">
-            <h3>Pulse Analytics</h3>
-            <p>B2B SaaS site redesign and speed rebuild. 92+ Lighthouse across pages, +34% sign-ups in 30 days.</p>
-            <div class="meta"><span>Web</span> • <span>Performance</span></div>
-          </div>
-        </article>
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80" alt="Creative branding mockups"/>
-          <div class="card-body">
-            <h3>North Studio</h3>
-            <p>Identity refresh and brand system with modular components for social, decks, and merch.</p>
-            <div class="meta"><span>Brand</span> • <span>Design System</span></div>
-          </div>
-        </article>
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="Mobile app landing page"/>
-          <div class="card-body">
-            <h3>Vista Mobile</h3>
-            <p>Conversion-focused landing + reel ads for a consumer app. CPI down 27% within two weeks.</p>
-            <div class="meta"><span>Landing</span> • <span>Paid Growth</span></div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>  <!-- 5. SOCIAL MEDIA SECTION (Instagram Reels) -->  <section id="social" class="social">
-    <div class="container">
-      <h2 class="section-title">Latest Work & Social Highlights</h2>
-      <p class="section-sub">Real work. Real results.</p>
-      <div class="grid">
-        <div>
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CwUI4UHSKcl/" data-instgrm-version="14"></blockquote>
-        </div>
-        <div>
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C0D5L7ePy3z/" data-instgrm-version="14"></blockquote>
-        </div>
-        <div>
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Crxw6l_uYEp/" data-instgrm-version="14"></blockquote>
-        </div>
-      </div>
-    </div>
-    <script async src="//www.instagram.com/embed.js"></script>
-  </section>  <!-- 6. TEAM SECTION -->  <section id="team" class="team">
-    <div class="container">
-      <h2 class="section-title">Team</h2>
-      <p class="section-sub">Small, senior, and obsessed with craft.</p>
-      <div class="grid">
-        <article class="card member">
-          <img src="https://images.unsplash.com/photo-1544725176-7c40e5a2c9f9?auto=format&fit=crop&w=960&q=80" alt="Portrait of creative director"/>
-          <div class="card-body">
-            <h3>Aria Singh</h3>
-            <div class="role">Creative Director</div>
-            <p>Leads identity and campaign systems. Ex-agency lead with 8+ years across tech and retail.</p>
-          </div>
-        </article>
-        <article class="card member">
-          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=960&q=80" alt="Portrait of technical lead"/>
-          <div class="card-body">
-            <h3>Dev Malhotra</h3>
-            <div class="role">Technical Lead</div>
-            <p>Performance-minded engineer delivering accessible, robust front-ends with clean architecture.</p>
-          </div>
-        </article>
-        <article class="card member">
-          <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=960&q=80" alt="Portrait of growth strategist"/>
-          <div class="card-body">
-            <h3>Maya Rao</h3>
-            <div class="role">Growth Strategist</div>
-            <p>Owns paid funnels and experimentation. Turns insights into wins across Meta and Google.</p>
-          </div>
-        </article>
-        <article class="card member">
-          <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format&fit=crop&w=960&q=80" alt="Portrait of content producer"/>
-          <div class="card-body">
-            <h3>Jonah Patel</h3>
-            <div class="role">Content Producer</div>
-            <p>Builds scroll-stopping short-form with tight hooks and clean edits for brand channels.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>  <!-- 7. TESTIMONIALS SECTION -->  <section id="testimonials" class="testimonials">
-    <div class="container">
-      <h2 class="section-title">Testimonials</h2>
-      <p class="section-sub">What clients say after launch.</p>
-      <div class="grid">
-        <article class="card">
-          <div class="card-body">
-            <p class="quote">“Page speed jumped into the 90s and trials spiked within two weeks. Clear comms, crisp delivery.”</p>
-            <div class="person">
-              <img class="avatar" src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=200&q=80" alt="Client avatar"/>
-              <div><strong>Rhea Kapoor</strong><div style="color:var(--muted);font-size:.9rem">COO, Pulse Analytics</div></div>
-            </div>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card-body">
-            <p class="quote">“They rebuilt our brand from the ground up. The system is easy to scale and looks premium everywhere.”</p>
-            <div class="person">
-              <img class="avatar" src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=crop&w=200&q=80" alt="Client avatar"/>
-              <div><strong>Neel Shah</strong><div style="color:var(--muted);font-size:.9rem">Founder, North Studio</div></div>
-            </div>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card-body">
-            <p class="quote">“Best creative partner we’ve worked with. The reels perform and the site just flies.”</p>
-            <div class="person">
-              <img class="avatar" src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=200&q=80" alt="Client avatar"/>
-              <div><strong>Sara Menon</strong><div style="color:var(--muted);font-size:.9rem">Head of Growth, Vista</div></div>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>  <!-- 8. BLOG SECTION (GhostCMS Embed) -->  <section id="blogs">
-    <div class="container">
-      <h2 class="section-title">Blogs</h2>
-      <p class="section-sub">Articles, playbooks, and teardown notes we publish.</p>
-      <iframe src="https://demo.ghost.io/" class="blog-frame" title="Ghost Blog Demo"></iframe>
-    </div>
-  </section>  <!-- 9. PRICING / SUBSCRIPTION SECTION -->  <section id="pricing" class="pricing">
-    <div class="container">
-      <h2 class="section-title">Pricing</h2>
-      <p class="section-sub">Choose a plan that fits your stage.</p>
-      <div class="grid">
-        <article class="card price-card">
-          <div class="card-body">
-            <h3>Starter</h3>
-            <div class="price">₹2,999</div>
-            <ul class="features">
-              <li>Single-page website</li>
-              <li>Basic SEO setup</li>
-              <li>1 round of revisions</li>
-              <li>Delivery in 5 days</li>
-            </ul>
-            <a class="btn subscribe" href="https://pages.razorpay.com/pl_KSqD1SamplePaymentLink" target="_blank" rel="noopener">Subscribe Now</a>
-          </div>
-        </article>
-        <article class="card price-card">
-          <div class="card-body">
-            <div class="badge">Most Popular</div>
-            <h3>Growth</h3>
-            <div class="price">₹6,999</div>
-            <ul class="features">
-              <li>Up to 5 pages</li>
-              <li>Conversion-focused copy</li>
-              <li>Analytics + heatmaps</li>
-              <li>2 rounds of revisions</li>
-            </ul>
-            <a class="btn primary subscribe" href="https://pages.razorpay.com/pl_KSqD1SamplePaymentLink" target="_blank" rel="noopener">Subscribe Now</a>
-          </div>
-        </article>
-        <article class="card price-card">
-          <div class="card-body">
-            <h3>Pro</h3>
-            <div class="price">₹12,999</div>
-            <ul class="features">
-              <li>Custom components</li>
-              <li>SEO + performance audit</li>
-              <li>Landing + ad creatives</li>
-              <li>Priority support</li>
-            </ul>
-            <a class="btn subscribe" href="https://pages.razorpay.com/pl_KSqD1SamplePaymentLink" target="_blank" rel="noopener">Subscribe Now</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>  <!-- 10. CONTACT SECTION -->  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Contact</h2>
-      <p class="section-sub">Reach out and we’ll reply within one business day.</p>
-      <div class="contact-actions">
-        <a class="icon-btn" href="https://wa.me/918102253186?text=Hi,+I'm+interested" target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.94 11.94 0 0 0 12.06 0C5.45.03.11 5.37.14 11.98c.01 2.1.56 4.17 1.6 6l-1.7 6 6.18-1.62a12 12 0 0 0 5.78 1.47h.05c6.61-.03 11.95-5.37 11.98-11.98a11.94 11.94 0 0 0-3.51-8.37ZM12.05 22.1h-.05a10.1 10.1 0 0 1-5.16-1.41l-.37-.22-3.66.96.98-3.53-.24-.39A10.1 10.1 0 0 1 1.9 12c-.03-5.6 4.5-10.16 10.11-10.19h.05c2.7 0 5.24 1.05 7.15 2.96a10.1 10.1 0 0 1 2.98 7.19c-.03 5.6-4.59 10.13-10.14 10.14Zm5.76-7.61c-.31-.15-1.86-.92-2.15-1.02-.29-.1-.5-.15-.71.15-.2.31-.81 1.02-.99 1.23-.18.2-.36.23-.67.08-.31-.15-1.32-.49-2.51-1.55-.93-.82-1.56-1.83-1.74-2.14-.18-.31-.02-.48.14-.63.14-.14.31-.36.46-.54.15-.18.2-.31.31-.52.1-.2.05-.39-.03-.54-.08-.15-.71-1.71-.98-2.35-.26-.63-.53-.54-.71-.55h-.6c-.2 0-.52.08-.79.39-.27.31-1.04 1.02-1.04 2.5 0 1.48 1.07 2.92 1.22 3.12.15.2 2.1 3.21 5.09 4.5.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.86-.76 2.13-1.49.26-.73.26-1.35.18-1.49-.08-.13-.28-.21-.59-.36Z"/></svg>
-          WhatsApp
-        </a>
-        <a class="icon-btn" href="https://instagram.com/" target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7Zm0 2h10c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3Zm12 1.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2ZM12 6.5A5.5 5.5 0 1 0 12 17.5 5.5 5.5 0 0 0 12 6.5Zm0 2A3.5 3.5 0 1 1 12 15.5 3.5 3.5 0 0 1 12 8.5Z"/></svg>
-          Instagram
-        </a>
-        <a class="icon-btn" href="mailto:hello@agency.site">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 2v.01L12 12 4 6.01V6h16ZM4 18V8.24l7.4 5.55a1 1 0 0 0 1.2 0L20 8.24V18H4Z"/></svg>
-          Email
-        </a>
-      </div>
-      <footer>
-        <div class="container">© <span id="year"></span> Agency. All rights reserved.</div>
-      </footer>
-    </div>
-  </section><script>
-  // Hamburger open/close animation + mobile dropdown
-  const hamburger = document.getElementById('hamburger');
-  const header = document.querySelector('header');
-  const mobileMenu = document.getElementById('mobileMenu');
-  hamburger.addEventListener('click', ()=>{
-    const isOpen = header.classList.toggle('mobile-open');
-    hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
-  // Close mobile menu on link click
-  mobileMenu.querySelectorAll('a').forEach(a=>{
-    a.addEventListener('click', ()=> header.classList.remove('mobile-open'));
-  });
 
-  // Smooth scrolling via JS (in addition to CSS)
-  document.querySelectorAll('a.nav-link, .btn[href^="#"]').forEach(link=>{
-    link.addEventListener('click', (e)=>{
-      const href = link.getAttribute('href');
-      if(href && href.startsWith('#')){
-        e.preventDefault();
-        const el = document.querySelector(href);
-        if(el){ el.scrollIntoView({behavior:'smooth', block:'start'}); }
-      }
-    });
-  });
+<header>
+  <div class="container nav-wrap">
+    <div class="logo">Agency</div>
+    <nav aria-label="Primary">
+      <ul id="desktopNav">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="#social" class="nav-link">Social</a></li>
+        <li><a href="#team" class="nav-link">Team</a></li>
+        <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+        <li><a href="/blog" class="nav-link">Blogs</a></li>
+        <li><a href="#pricing" class="nav-link">Pricing</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hamburger" id="hamburger" aria-label="Open Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="container mobile-menu" id="mobileMenu">
+    <a href="#home" class="nav-link">Home</a>
+    <a href="#services" class="nav-link">Services</a>
+    <a href="#portfolio" class="nav-link">Portfolio</a>
+    <a href="#social" class="nav-link">Social</a>
+    <a href="#team" class="nav-link">Team</a>
+    <a href="#testimonials" class="nav-link">Testimonials</a>
+    <a href="/blog" class="nav-link">Blogs</a>
+    <a href="#pricing" class="nav-link">Pricing</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </div>
+</header>
 
-  // Active link highlighting on scroll
-  const sections = ['home','services','portfolio','social','team','testimonials','blogs','pricing','contact'].map(id=>document.getElementById(id));
-  const navLinks = document.querySelectorAll('a.nav-link');
-  const setActive = ()=>{
-    let current = sections[0].id;
-    const fromTop = window.scrollY + 120;
-    sections.forEach(sec=>{
-      if(sec.offsetTop <= fromTop) current = sec.id;
-    });
-    navLinks.forEach(a=>{
-      a.classList.toggle('active', a.getAttribute('href') === '#'+current);
-    });
-  };
-  window.addEventListener('scroll', setActive);
-  window.addEventListener('load', ()=>{
-    setActive();
-    document.getElementById('year').textContent = new Date().getFullYear();
+<section id="home">
+  <div class="container hero">
+    <div>
+      <h1>Meta Ads That Actually Convert.</h1>
+      <p>We run high-performing Meta ad campaigns engineered for profitable acquisition — from hooks to audiences to scaling systems.</p>
+      <div class="btns">
+        <a href="#pricing" class="btn primary">Subscribe Now</a>
+        <a href="#portfolio" class="btn">See Portfolio</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1200&q=80" alt="Meta ads dashboard on screen"/>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="services">
+  <div class="container">
+    <h2 class="section-title">Services</h2>
+    <p class="section-sub">Direct-response Meta Ads Management.</p>
+    <div class="grid">
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=960&q=80" alt="">
+        <div class="card-body">
+          <h3>Meta Ads Strategy</h3>
+          <p>End-to-end campaign setup built for reach, relevance, and ROI.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&w=960&q=80" alt="">
+        <div class="card-body">
+          <h3>Ad Creative Production</h3>
+          <p>High-performing creative variations optimized for CTR and CPA.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=960&q=80" alt="">
+        <div class="card-body">
+          <h3>Audience Research</h3>
+          <p>Layered targeting structures designed to scale profitably.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1551816023-546b34593e7d?auto=format&fit=crop&w=960&q=80" alt="">
+        <div class="card-body">
+          <h3>Optimization & Scaling</h3>
+          <p>Rapid testing systems to cut costs and increase conversions.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?auto=format&fit=crop&w=960&q=80" alt="">
+        <div class="card-body">
+          <h3>Reporting</h3>
+          <p>Clear breakdowns of performance, KPIs, and next steps.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=960&q=80" alt="">
+        <div class="card-body">
+          <h3>Creative Consulting</h3>
+          <p>Hook improvement, script guidance, and iteration frameworks.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio" class="portfolio">
+  <div class="container">
+    <h2 class="section-title">Campaign Wins</h2>
+    <p class="section-sub">Real Meta Ads results.</p>
+    <div class="grid">
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?auto=format&fit=crop&w=1200&q=80" alt="">
+        <div class="card-body">
+          <h3>Fitness Brand – 4.2x ROAS</h3>
+          <p>Creative refresh + new audience stacks led to a 38% drop in CPA.</p>
+          <div class="meta"><span>Meta Ads</span> • <span>Scaling</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1556155092-8707de31f9c4?auto=format&fit=crop&w=1200&q=80" alt="">
+        <div class="card-body">
+          <h3>Local Services – 3x Cheaper Leads</h3>
+          <p>New creatives + split testing lead formats improved lead volume and quality.</p>
+          <div class="meta"><span>Lead Gen</span> • <span>Optimization</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=1200&q=80" alt="">
+        <div class="card-body">
+          <h3>E-commerce – Scaling to 5 Figures</h3>
+          <p>Broad targeting + UGC creatives resulted in consistent profitable scaling.</p>
+          <div class="meta"><span>Ecom</span> • <span>UGC</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="social" class="social">
+  <div class="container">
+    <h2 class="section-title">Latest Work & Social Highlights</h2>
+    <p class="section-sub">Real work. Real results.</p>
+    <div class="grid">
+      <iframe class="social-embed" src="https://www.instagram.com/reel/DOHGJrPDWW9/embed" allowfullscreen></iframe>
+      <iframe class="social-embed" src="https://www.instagram.com/reel/DOfmheEjak1/embed" allowfullscreen></iframe>
+      <iframe class="social-embed" src="https://www.instagram.com/reel/DPQlRn4DIad/embed" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section id="team" class="team">
+  <div class="container">
+    <h2 class="section-title">Team</h2>
+    <p class="section-sub">Small, senior, and performance-focused.</p>
+    <div class="grid">
+      <article class="card member">
+        <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=960&q=80" alt="">
+        <div class="card-body">
+          <h3>Aria Singh</h3>
+          <div class="role">Creative Director</div>
+          <p>Builds scroll-stopping creatives engineered for conversions.</p>
+        </div>
+      </article>
+      <article class="card member">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=960&q=80" alt="">
+        <div class="card-body">
+          <h3>Dev Malhotra</h3>
+          <div class="role">Technical Lead</div>
+          <p>Expert in tracking, attribution, and data systems.</p>
+        </div>
+      </article>
+      <article class="card member">
+        <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=960&q=80" alt="">
+        <div class="card-body">
+          <h3>Maya Rao</h3>
+          <div class="role">Growth Strategist</div>
+          <p>Develops scaling strategies using structured experimentation.</p>
+        </div>
+      </article>
+      <article class="card member">
+        <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format&fit=crop&w=960&q=80" alt="">
+        <div class="card-body">
+          <h3>Jonah Patel</h3>
+          <div class="role">Content Producer</div>
+          <p>Creates high-performing UGC designed to reduce CPA.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" class="testimonials">
+  <div class="container">
+    <h2 class="section-title">Testimonials</h2>
+    <p class="section-sub">What clients say.</p>
+    <div class="grid">
+      <iframe class="testimonial-video" src="https://www.youtube.com/embed/myV4Wgl8oTA" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section id="blogs">
+  <div class="container">
+    <h2 class="section-title">Blogs</h2>
+    <p class="section-sub">Insights, updates, and ideas.</p>
+
+    <div class="card" style="max-width:700px;margin:0 auto;">
+      <img src="https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1200&q=80" alt="">
+      <div class="card-body">
+        <h3>How to Improve Your Meta Ads Performance Fast</h3>
+        <p>Simple tweaks in creatives, hooks, and audience segmentation can drastically reduce your CPA and increase ROAS.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="pricing" class="pricing">
+  <div class="container">
+    <h2 class="section-title">Pricing</h2>
+    <p class="section-sub">Simple monthly plan.</p>
+    <div class="grid">
+      <article class="card price-card">
+        <div class="card-body">
+          <h3>Meta Ads Plan</h3>
+          <div class="price">₹2,999 / month</div>
+          <ul class="features">
+            <li>5 Campaign Setup</li>
+            <li>10 Ad Creatives</li>
+            <li>Monthly Reporting</li>
+            <li>WhatsApp Support</li>
+          </ul>
+          <a class="btn primary subscribe" href="https://pages.razorpay.com/pl_KSqD1SamplePaymentLink" target="_blank" rel="noopener">Subscribe Now</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact</h2>
+    <p class="section-sub">Let's work together.</p>
+    <div class="contact-actions">
+      <a class="icon-btn" href="https://wa.me/918959660907?text=Hi,+I'm+interested" target="_blank" rel="noopener">
+        WhatsApp
+      </a>
+      <a class="icon-btn" href="https://www.instagram.com/krishnakideals" target="_blank" rel="noopener">
+        Instagram
+      </a>
+      <a class="icon-btn" href="mailto:metasubodh@gmail.com">
+        Email
+      </a>
+    </div>
+    <footer>
+      <div class="container">© <span id="year"></span> Agency. All rights reserved.</div>
+    </footer>
+  </div>
+</section>
+
+<script>
+const hamburger=document.getElementById('hamburger');
+const header=document.querySelector('header');
+const mobileMenu=document.getElementById('mobileMenu');
+hamburger.addEventListener('click',()=>{
+  const isOpen=header.classList.toggle('mobile-open');
+  hamburger.setAttribute('aria-expanded',isOpen?'true':'false');
+});
+mobileMenu.querySelectorAll('a').forEach(a=>{
+  a.addEventListener('click',()=> header.classList.remove('mobile-open'));
+});
+document.querySelectorAll('a.nav-link, .btn[href^="#"]').forEach(link=>{
+  link.addEventListener('click',(e)=>{
+    const href=link.getAttribute('href');
+    if(href && href.startsWith('#')){
+      e.preventDefault();
+      const el=document.querySelector(href);
+      if(el){el.scrollIntoView({behavior:'smooth',block:'start'});}
+    }
   });
-</script></body>
+});
+const sections=['home','services','portfolio','social','team','testimonials','blogs','pricing','contact']
+.map(id=>document.getElementById(id));
+const navLinks=document.querySelectorAll('a.nav-link');
+const setActive=()=>{
+  let current=sections[0].id;
+  const fromTop=window.scrollY+120;
+  sections.forEach(sec=>{
+    if(sec.offsetTop<=fromTop) current=sec.id;
+  });
+  navLinks.forEach(a=>{
+    a.classList.toggle('active',a.getAttribute('href')==='#'+current);
+  });
+};
+window.addEventListener('scroll',setActive);
+window.addEventListener('load',()=>{
+  setActive();
+  document.getElementById('year').textContent=new Date().getFullYear();
+});
+</script>
+</body>
 </html>
