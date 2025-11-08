@@ -54,9 +54,8 @@ nav a:hover,nav a.active{color:var(--text);background:var(--card)}
 
 section{padding:70px 0;border-top:1px solid var(--border)}
 section:first-of-type{border-top:none}
-h2.section-title{font-size:2rem;margin:0 0 16px;text-align:center}
-
-p.section-sub{color:var(--muted);margin:0 0 28px;text-align:center}
+h2.section-title{font-size:2rem;margin:0 0 16px}
+p.section-sub{color:var(--muted);margin:0 0 28px}
 
 #home{
 padding:110px 0 90px;
@@ -118,7 +117,6 @@ background:var(--bg-soft);
 grid-template-columns:1fr;
 display:flex;
 justify-content:center;
-margin-top:40px;
 }
 .price-card{
 display:flex;
@@ -126,14 +124,18 @@ flex-direction:column;
 gap:14px;
 max-width:480px;
 margin:auto;
-padding:26px;
-box-shadow:0 6px 22px rgba(0,0,0,0.28);
+padding:22px;
+box-shadow:0 4px 18px rgba(0,0,0,0.25);
 border-radius:18px;
 }
 
 .price{font-size:1.6rem;font-weight:800}
 .features{color:var(--muted);padding-left:18px}
 .features li{margin:6px 0}
+
+.card-body a.btn{
+margin-top:14px;
+}
 
 .contact-actions{display:flex;gap:12px;flex-wrap:wrap}
 .icon-btn{
@@ -242,6 +244,7 @@ section{padding:60px 0}
 <section id="pricing" class="pricing">
 <div class="container">
 <h2 class="section-title">Pricing</h2>
+<p class="section-sub">Simple monthly plan.</p>
 <div class="grid">
 <article class="card price-card">
 <div class="card-body">
@@ -317,7 +320,7 @@ section{padding:60px 0}
 <div class="card-body">
 <h3>How to Improve Your Meta Ads Performance Fast</h3>
 <p>Simple tweaks in creatives, hooks, and segmentation can drastically reduce CPA.</p>
-<a href="/blogs" class="btn" style="margin-top:24px;">Read More</a>
+<a href="/blogs" class="btn" style="margin-top:16px;">Read More</a>
 </div>
 </div>
 
