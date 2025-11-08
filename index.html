@@ -1,0 +1,272 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nova Agency — Portfolio • Blogs • Subscriptions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0f15;--surface:#101826;--muted:#8b94a7;--text:#e5e7eb;--brand:#60a5fa;--brand-2:#22c55e;--ring:rgba(255,255,255,.08)
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text);}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{max-width:1180px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;z-index:30;background:rgba(11,15,21,.65);backdrop-filter:blur(10px);border-bottom:1px solid var(--ring)}
+    nav{display:flex;gap:18px;align-items:center;padding:12px 24px}
+    .brand{font-weight:800;letter-spacing:.2px}
+    nav a{opacity:.9}
+    nav a:hover{opacity:1}
+    .spacer{flex:1}
+    .btn{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:#051024;border:0;border-radius:12px;padding:12px 16px;font-weight:700;cursor:pointer}
+    .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--ring)}
+    .btn.ok{background:var(--brand-2);color:#04120b}
+    .card{background:var(--surface);border:1px solid var(--ring);border-radius:16px;padding:18px}
+    .grid{display:grid;gap:16px}
+    .grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid.cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .muted{color:var(--muted)}
+    .kicker{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#9aa3b5}
+    .hero{padding:64px 24px 32px;display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+    .tag{font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--ring);background:rgba(96,165,250,.08)}
+    .section{padding:36px 24px}
+    .title{margin:0 0 12px;font-size:32px}
+    .subtitle{margin:0 0 18px;color:var(--muted)}
+    .thumb{height:180px;border-radius:12px;background:#0a0f18 url('https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat}
+    .avatar{width:56px;height:56px;border-radius:50%;object-fit:cover;border:1px solid var(--ring)}
+    .price{font-size:28px;font-weight:800}
+    .hide{display:none!important}
+    .pill{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.06);border:1px solid var(--ring);border-radius:999px;padding:6px 10px}
+    footer{border-top:1px solid var(--ring);padding:28px}
+    @media (max-width: 980px){
+      .hero{grid-template-columns:1fr}
+      .grid.cols-3{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .grid.cols-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media (max-width: 640px){
+      nav .hide-sm{display:none}
+      .grid.cols-2,.grid.cols-3,.grid.cols-4{grid-template-columns:1fr}
+    }
+    /* instagram embed container fix for dark bg */
+    .ig-embed{--ig-bg:#0e1522;}
+    .ig-embed blockquote{background:var(--surface)!important;border-color:var(--ring)!important;border-radius:16px!important}
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap">
+      <div class="brand">Nova Agency</div>
+      <a class="hide-sm" href="#home">Home</a>
+      <a class="hide-sm" href="#portfolio">Portfolio</a>
+      <a class="hide-sm" href="#blogs">Blogs</a>
+      <a class="hide-sm" href="#social">Social</a>
+      <a class="hide-sm" href="#pricing">Subscribe</a>
+      <a class="hide-sm" href="#contact">Contact</a>
+      <div class="spacer"></div>
+      <a href="#pricing" class="btn">Get Started</a>
+    </nav>
+  </header>  <!-- HERO -->  <section id="home" class="wrap hero">
+    <div class="card" style="display:flex;flex-direction:column;gap:10px">
+      <span class="kicker">Design • Build • Grow</span>
+      <h1 style="margin:0;font-size:42px;line-height:1.08">We ship fast, clean websites that convert.</h1>
+      <p class="muted">Showcase your work, publish blogs via GhostCMS, and sell subscriptions with Razorpay. After payment, users get a WhatsApp handoff for white‑glove onboarding.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a href="#portfolio" class="btn">See Portfolio</a>
+        <a href="#pricing" class="btn ghost">View Plans</a>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
+        <span class="pill"><span class="tag">SEO Ready</span> <span class="muted">•</span> Blazing fast</span>
+        <span class="pill"><span class="tag">GhostCMS</span> <span class="muted">•</span> Easy blogging</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="thumb" style="height:320px;background-image:url('https://images.unsplash.com/photo-1528460033278-a6ba57020470?q=80&w=1200&auto=format&fit=crop');"></div>
+      <div class="muted" style="margin-top:10px">Demo UI — stock imagery (.jpg)</div>
+    </div>
+  </section>  <!-- PORTFOLIO -->  <section id="portfolio" class="wrap section">
+    <h2 class="title">Portfolio</h2>
+    <p class="subtitle">A few recent builds. Real case studies replace the placeholders later.</p>
+    <div class="grid cols-3">
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="SaaS Landing" style="border-radius:12px">
+        <h3>ZenTrack — SaaS Landing</h3>
+        <p class="muted">Revamp increased sign‑ups by 27% in first month.</p>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Commerce" style="border-radius:12px">
+        <h3>Oak & Co — Commerce</h3>
+        <p class="muted">Rebuild improved checkout speed and AOV.</p>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1200&auto=format&fit=crop" alt="Portfolio" style="border-radius:12px">
+        <h3>NeonFit — Brand Site</h3>
+        <p class="muted">New brand site with blog & lead magnets.</p>
+      </article>
+    </div><h3 style="margin:26px 0 10px">Testimonials</h3>
+<div class="grid cols-3">
+  <div class="card" style="display:flex;gap:12px;align-items:center">
+    <img class="avatar" src="https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=400&auto=format&fit=crop" alt="Avatar">
+    <div><strong>Subodh</strong><div class="muted">Founder, BraveLabs</div></div>
+  </div>
+  <div class="card" style="display:flex;gap:12px;align-items:center">
+    <img class="avatar" src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=400&auto=format&fit=crop" alt="Avatar">
+    <div><strong>Rhea</strong><div class="muted">Growth Lead, Oak&Co</div></div>
+  </div>
+  <div class="card" style="display:flex;gap:12px;align-items:center">
+    <img class="avatar" src="https://images.unsplash.com/photo-1546525848-3ce03ca516f6?q=80&w=400&auto=format&fit=crop" alt="Avatar">
+    <div><strong>Arjun</strong><div class="muted">CEO, NeonFit</div></div>
+  </div>
+</div>
+
+<h3 style="margin:26px 0 10px">Team</h3>
+<div class="grid cols-4">
+  <div class="card" style="text-align:center">
+    <img class="avatar" style="margin:0 auto 8px" src="https://images.unsplash.com/photo-1545996124-0501ebae84d5?q=80&w=400&auto=format&fit=crop" alt="Ravi">
+    <strong>Ravi Sharma</strong><div class="muted">Founder • Product</div>
+  </div>
+  <div class="card" style="text-align:center">
+    <img class="avatar" style="margin:0 auto 8px" src="https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=400&auto=format&fit=crop" alt="Aayush">
+    <strong>Aayush</strong><div class="muted">Frontend</div>
+  </div>
+  <div class="card" style="text-align:center">
+    <img class="avatar" style="margin:0 auto 8px" src="https://images.unsplash.com/photo-1548544149-4835eabf50aa?q=80&w=400&auto=format&fit=crop" alt="Priya">
+    <strong>Priya</strong><div class="muted">Design</div>
+  </div>
+  <div class="card" style="text-align:center">
+    <img class="avatar" style="margin:0 auto 8px" src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=400&auto=format&fit=crop" alt="Kabir">
+    <strong>Kabir</strong><div class="muted">Marketing</div>
+  </div>
+</div>
+
+  </section>  <!-- BLOGS (GhostCMS feed) -->  <section id="blogs" class="wrap section">
+    <h2 class="title">Latest from the blog</h2>
+    <p class="subtitle">Powered by GhostCMS. Replace demo URL & key with your own.</p>
+    <div id="blogGrid" class="grid cols-3"></div>
+  </section>  <!-- SOCIAL: Instagram Reels embeds -->  <section id="social" class="wrap section">
+    <h2 class="title">Social Highlights</h2>
+    <p class="subtitle">Recent Instagram Reels we want visitors to see.</p>
+    <div class="grid cols-2 ig-embed">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CxTjBf8r8H7/" data-instgrm-version="14" style="background:#101826;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:0;margin:0 auto;max-width:540px;width:100%"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Cwq9sSwa23n/" data-instgrm-version="14" style="background:#101826;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:0;margin:0 auto;max-width:540px;width:100%"></blockquote>
+    </div>
+    <script async src="https://www.instagram.com/embed.js"></script>
+  </section>  <!-- PRICING / SUBSCRIPTIONS (Razorpay Payment Page) -->  <section id="pricing" class="wrap section">
+    <h2 class="title">Simple Plans</h2>
+    <p class="subtitle">Pay via Razorpay. We’ll redirect to WhatsApp after success.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <div class="kicker">Starter</div>
+        <div class="price">₹2,999/mo</div>
+        <ul class="muted" style="line-height:1.9">
+          <li>1 website</li>
+          <li>Blog publishing</li>
+          <li>Email support</li>
+        </ul>
+        <a class="btn" href="https://rzp.io/l/your-payment-page" target="_blank">Subscribe</a>
+      </div>
+      <div class="card">
+        <div class="kicker">Growth</div>
+        <div class="price">₹6,999/mo</div>
+        <ul class="muted" style="line-height:1.9">
+          <li>Priority changes</li>
+          <li>Blog + SEO help</li>
+          <li>Monthly consult</li>
+        </ul>
+        <a class="btn" href="https://rzp.io/l/your-payment-page" target="_blank">Subscribe</a>
+      </div>
+      <div class="card">
+        <div class="kicker">Pro</div>
+        <div class="price">₹12,999/mo</div>
+        <ul class="muted" style="line-height:1.9">
+          <li>Unlimited requests</li>
+          <li>Faster turnaround</li>
+          <li>Strategy sessions</li>
+        </ul>
+        <a class="btn" href="https://rzp.io/l/your-payment-page" target="_blank">Subscribe</a>
+      </div>
+    </div><div class="card" style="margin-top:14px">
+  <span class="kicker">After Payment</span>
+  <p class="muted">Set your Razorpay Payment Page success redirect to <code>https://yourdomain.com/#paid=1</code>. The dashboard below will unlock a WhatsApp button when <code>#paid=1</code> is present.</p>
+</div>
+
+  </section>  <!-- CONTACT + DASHBOARD WHATSAPP HANDOFF -->  <section id="contact" class="wrap section">
+    <h2 class="title">Contact</h2>
+    <div class="grid cols-2">
+      <div class="card">
+        <p class="subtitle">Fastest way? WhatsApp.</p>
+        <a id="waMain" class="btn ok" href="#" target="_blank">Chat on WhatsApp</a>
+        <div style="height:10px"></div>
+        <div class="muted">Prefer social? <a href="#">Instagram</a> • <a href="#">Twitter</a> • <a href="#">LinkedIn</a></div>
+      </div>
+      <div class="card">
+        <span class="kicker">Your Dashboard</span>
+        <p class="muted">If you’ve paid, the WhatsApp onboarding button will appear here.</p>
+        <a id="waDash" class="btn hide" target="_blank" href="#">Open WhatsApp</a>
+        <div id="paidPill" class="pill hide" style="margin-top:10px"><span class="tag">Payment Verified</span> Ready for onboarding</div>
+      </div>
+    </div>
+  </section>  <footer class="wrap">
+    <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+      <div>© <span id="yr"></span> Nova Agency</div>
+      <span class="muted">•</span>
+      <div class="muted">Built for demo — stock .jpg images</div>
+    </div>
+  </footer>  <script>
+    // ===== CONFIG =====
+    const WHATSAPP_NUMBER = '918102253186'; // change to your number (no +)
+    const WHATSAPP_TEXT   = encodeURIComponent('Hey! I just subscribed. Can we start onboarding?');
+    const GHOST_URL       = 'https://demo.ghost.io'; // replace with your Ghost site URL (no trailing slash)
+    const GHOST_CONTENT_KEY = '22444f78447824223cefc48062'; // replace with your Content API key
+
+    // ===== UTIL =====
+    const $ = s => document.querySelector(s);
+    const el = (t,p={}) => Object.assign(document.createElement(t),p);
+
+    // Year
+    $('#yr').textContent = new Date().getFullYear();
+
+    // WhatsApp links
+    const waHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_TEXT}`;
+    $('#waMain').href = waHref;
+    $('#waDash').href = waHref;
+
+    // Payment success flag via URL hash: #paid=1
+    if (location.hash.includes('paid=1')) localStorage.setItem('paid','1');
+    const paid = localStorage.getItem('paid') === '1';
+    if (paid){
+      $('#waDash').classList.remove('hide');
+      $('#paidPill').classList.remove('hide');
+    }
+
+    // ===== BLOG FEED (Ghost Content API) =====
+    async function loadGhost(){
+      const grid = $('#blogGrid');
+      try{
+        const res = await fetch(`${GHOST_URL}/ghost/api/content/posts/?key=${GHOST_CONTENT_KEY}&fields=title,feature_image,excerpt,url,published_at&limit=6`);
+        const data = await res.json();
+        const posts = data.posts || [];
+        if(!posts.length){ grid.innerHTML = '<div class="card">No posts yet.</div>'; return; }
+        posts.forEach(p =>{
+          const card = el('article',{className:'card'});
+          const img = el('img',{src:p.feature_image||'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop',alt:p.title,style:'border-radius:12px'});
+          const h   = el('h3'); h.textContent = p.title;
+          const ex  = el('p',{className:'muted'}); ex.textContent = p.excerpt||'';
+          const a   = el('a',{className:'btn ghost',href:p.url,target:'_blank'}); a.textContent = 'Read →';
+          card.append(img,h,ex,a);
+          grid.appendChild(card);
+        });
+      }catch(err){
+        grid.innerHTML = '<div class="card">Could not load blog feed (demo).</div>';
+        console.error(err);
+      }
+    }
+    loadGhost();
+  </script></body>
+</html>
