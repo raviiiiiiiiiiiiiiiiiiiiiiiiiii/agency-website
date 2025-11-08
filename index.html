@@ -10,51 +10,52 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0b0f15;--surface:#0f1726;--muted:#8b94a7;--text:#e5e7eb;--brand:#60a5fa;--brand-2:#22c55e;--ring:rgba(255,255,255,.08)
+      --bg:#0b0f15;--surface:#0f1726;--muted:#9aa3b5;--text:#e5e7eb;--brand:#60a5fa;--ok:#22c55e;--ring:rgba(255,255,255,.08)
     }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text)}
     a{color:inherit;text-decoration:none}
-    img,video{max-width:100%;display:block;border-radius:12px}
-    .wrap{max-width:1180px;margin:0 auto;padding:24px}
-    header{position:sticky;top:0;z-index:30;background:rgba(11,15,21,.65);backdrop-filter:blur(10px);border-bottom:1px solid var(--ring)}
-    nav{display:flex;gap:18px;align-items:center;padding:12px 24px}
-    .brand{font-weight:800;letter-spacing:.2px}
-    nav a{opacity:.9}
-    nav a:hover{opacity:1}
+    img,video{max-width:100%;display:block;border-radius:14px}
+    .wrap{max-width:1140px;margin:0 auto;padding:20px}
+    header{position:sticky;top:0;z-index:30;background:rgba(11,15,21,.7);backdrop-filter:blur(10px);border-bottom:1px solid var(--ring)}
+    nav{display:flex;gap:14px;align-items:center;padding:10px 20px}
+    .brand{font-weight:800}
     .spacer{flex:1}
     .btn{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:#051024;border:0;border-radius:12px;padding:12px 16px;font-weight:700;cursor:pointer}
     .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--ring)}
-    .btn.ok{background:var(--brand-2);color:#04120b}
+    .btn.ok{background:var(--ok);color:#04120b}
     .card{background:var(--surface);border:1px solid var(--ring);border-radius:16px;padding:18px}
-    .grid{display:grid;gap:16px}
+    .grid{display:grid;gap:14px}
     .grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
     .grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .grid.cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
     .muted{color:var(--muted)}
     .kicker{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#9aa3b5}
-    .hero{padding:64px 24px 32px;display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
-    .title{margin:0 0 12px;font-size:32px}
-    .subtitle{margin:0 0 18px;color:var(--muted)}
+    .hero{padding:52px 20px 24px;display:grid;grid-template-columns:1fr;gap:14px}
+    .title{margin:0 0 10px;font-size:30px}
+    .subtitle{margin:0 0 16px;color:var(--muted)}
     .pill{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.06);border:1px solid var(--ring);border-radius:999px;padding:6px 10px}
-    .ratio-9-16{position:relative;width:100%;padding-top:177.78%} /* 16/9 inverted */
-    .ratio-9-16 > .fill{position:absolute;inset:0;background:#0a0f18 center/cover no-repeat;border-radius:12px}
-    .stat{display:flex;flex-direction:column;gap:6px;padding:14px;border:1px solid var(--ring);border-radius:12px;background:rgba(255,255,255,.03)}
+    .ratio-9-16{position:relative;width:100%;padding-top:177.78%}
+    .ratio-9-16>.fill{position:absolute;inset:0;background:#0a0f18 center/cover no-repeat;border-radius:14px}
+    .stat{display:flex;flex-direction:column;gap:4px;padding:12px;border:1px solid var(--ring);border-radius:12px;background:rgba(255,255,255,.03);text-align:center}
     .price{font-size:28px;font-weight:800}
     .hide{display:none!important}
-    footer{border-top:1px solid var(--ring);padding:28px}
-    @media (max-width: 980px){
-      .hero{grid-template-columns:1fr}
-      .grid.cols-3{grid-template-columns:repeat(2,minmax(0,1fr))}
-      .grid.cols-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+    footer{border-top:1px solid var(--ring);padding:24px}
+    /* CAROUSEL */
+    .carousel{position:relative;overflow:hidden;border-radius:14px}
+    .carousel-track{display:flex;transition:transform .4s ease;will-change:transform}
+    .carousel-item{min-width:100%;padding:0}
+    .carousel-nav{display:flex;justify-content:space-between;position:absolute;inset:0;pointer-events:none}
+    .carousel-btn{pointer-events:auto;align-self:center;background:rgba(0,0,0,.4);border:1px solid var(--ring);backdrop-filter:blur(6px);color:#fff;border-radius:999px;width:36px;height:36px;display:flex;align-items:center;justify-content:center}
+    @media (min-width: 980px){
+      .hero{grid-template-columns:1.1fr .9fr}
+      nav a.hide-lg{display:none}
+      .grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
     }
     @media (max-width: 640px){
-      nav .hide-sm{display:none}
-      .grid.cols-2,.grid.cols-3,.grid.cols-4{grid-template-columns:1fr}
+      nav a.hide-sm{display:none}
     }
-    /* instagram embed container fix for dark bg */
-    .ig-embed blockquote{background:var(--surface)!important;border:1px solid var(--ring)!important;border-radius:16px!important}
   </style>
 </head>
 <body>
@@ -66,91 +67,59 @@
       <a class="hide-sm" href="#case-studies">Case Studies</a>
       <a class="hide-sm" href="#blogs">Blog</a>
       <a class="hide-sm" href="#social">Social</a>
-      <a class="hide-sm" href="#pricing">Plans</a>
+      <a class="hide-sm" href="#pricing">Plan</a>
       <a class="hide-sm" href="#contact">Contact</a>
       <div class="spacer"></div>
-      <a href="#contact" class="btn">Book a Call</a>
+      <a href="#pricing" class="btn">Start @ ₹2,999/mo</a>
     </nav>
   </header>  <!-- HERO -->  <section id="home" class="wrap hero">
     <div class="card" style="display:flex;flex-direction:column;gap:10px">
       <span class="kicker">Performance Marketing</span>
-      <h1 style="margin:0;font-size:42px;line-height:1.08">We turn ad spend into predictable revenue.</h1>
-      <p class="muted">Meta & Google Ads, funnels, CRO and reporting — packaged in clean monthly plans. We build, test, and scale until the numbers work. No fluff, just results.</p>
+      <h1 style="margin:0;font-size:38px;line-height:1.08">We turn ad spend into predictable revenue.</h1>
+      <p class="muted">Meta & Google Ads, funnels, CRO and reporting — packaged in one plan. We build, test, and scale until the numbers work.</p>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
         <a href="#services" class="btn">What we do</a>
         <a href="#case-studies" class="btn ghost">See wins</a>
       </div>
       <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
-        <span class="pill">Avg ROAS 3.2× (example)</span>
+        <span class="pill">ROAS-first approach</span>
         <span class="pill">Weekly reports</span>
         <span class="pill">Landing page tweaks</span>
       </div>
     </div>
     <div class="card">
-      <div class="ratio-9-16">
-        <div class="fill" style="background-image:url('https://images.unsplash.com/photo-1551281044-8b29d3b4f36b?q=80&w=1200&auto=format&fit=crop');"></div>
-      </div>
-      <div class="muted" style="margin-top:10px">Demo 9:16 creative — stock .jpg</div>
+      <div class="ratio-9-16"><div class="fill" style="background-image:url('https://images.unsplash.com/photo-1551281044-8b29d3b4f36b?q=80&w=1200&auto=format&fit=crop');"></div></div>
+      <div class="muted" style="margin-top:8px">9:16 creative — stock .jpg</div>
     </div>
-  </section>  <!-- SERVICES -->  <section id="services" class="wrap" style="padding:36px 24px">
+  </section>  <!-- SERVICES -->  <section id="services" class="wrap" style="padding:28px 20px">
     <h2 class="title">Services that move the needle</h2>
     <p class="subtitle">Everything required to acquire, convert, and retain — under one roof.</p>
     <div class="grid cols-3">
       <div class="card">
         <h3>Meta Ads</h3>
-        <p class="muted">Full‑funnel campaigns for awareness, retargeting, and conversions. Creative testing, CBO/ABO structures, and audience experiments.</p>
-        <ul class="muted" style="line-height:1.9">
-          <li>Statically and UGC creatives</li>
-          <li>Retargeting stacks</li>
-          <li>A/B creative + copy</li>
-        </ul>
+        <p class="muted">Full‑funnel campaigns: awareness, retargeting, conversions. Creative testing + audience experiments.</p>
       </div>
       <div class="card">
         <h3>Google Ads</h3>
-        <p class="muted">Search, PMax, and YouTube. Query sculpting, negative keywords, and feed optimization for e‑commerce & SaaS.</p>
-        <ul class="muted" style="line-height:1.9">
-          <li>Keyword mapping</li>
-          <li>Offer‑led ad groups</li>
-          <li>Budget automation</li>
-        </ul>
+        <p class="muted">Search, PMax, YouTube. Query sculpting, negatives, and feed optimization.</p>
       </div>
       <div class="card">
         <h3>CRO & Landing Pages</h3>
-        <p class="muted">Rapid experiments on headlines, hooks, social proof, and forms to shave friction and lift CVR.</p>
-        <ul class="muted" style="line-height:1.9">
-          <li>Heuristic audits</li>
-          <li>Heatmap insights</li>
-          <li>Offer + pricing tests</li>
-        </ul>
+        <p class="muted">Rapid experiments on headlines, hooks, social proof, and forms to lift CVR.</p>
       </div>
-    </div><div class="grid cols-3" style="margin-top:16px">
-  <div class="card">
-    <h3>Analytics & Reporting</h3>
-    <p class="muted">GA4, pixel hygiene, UTMs, and weekly performance dashboards so the story is always clear.</p>
-  </div>
-  <div class="card">
-    <h3>Email & Retention</h3>
-    <p class="muted">Flows and campaigns that monetize traffic you already paid for. Klaviyo or Mailchimp.</p>
-  </div>
-  <div class="card">
-    <h3>Creative Production</h3>
-    <p class="muted">9:16 hooks, carousels, and motion cut‑downs aligned to the angle and offer. We ship options weekly.</p>
-  </div>
-</div>
-
-  </section>  <!-- CASE STUDIES / METRICS -->  <section id="case-studies" class="wrap" style="padding:36px 24px">
+    </div>
+  </section>  <!-- CASE STUDIES / METRICS -->  <section id="case-studies" class="wrap" style="padding:28px 20px">
     <h2 class="title">Case Studies</h2>
-    <p class="subtitle">Real brands, real numbers (example data for layout).</p>
+    <p class="subtitle">Example numbers to show layout (replace with real data).</p>
     <div class="grid cols-3">
       <article class="card">
         <div class="ratio-9-16"><div class="fill" style="background-image:url('https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop');"></div></div>
         <h3>DTC Apparel</h3>
         <div class="grid cols-3">
-          <div class="stat"><strong>+64%</strong><span class="muted">Rev in 60 days</span></div>
+          <div class="stat"><strong>+64%</strong><span class="muted">Rev in 60d</span></div>
           <div class="stat"><strong>3.4×</strong><span class="muted">ROAS</span></div>
           <div class="stat"><strong>-28%</strong><span class="muted">CPC</span></div>
         </div>
-        <p class="muted">Scaled Meta Retargeting + YouTube prospecting. Tight offers and fresh creatives every week.</p>
       </article>
       <article class="card">
         <div class="ratio-9-16"><div class="fill" style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop');"></div></div>
@@ -158,9 +127,8 @@
         <div class="grid cols-3">
           <div class="stat"><strong>-42%</strong><span class="muted">CAC</span></div>
           <div class="stat"><strong>+31%</strong><span class="muted">Free→Paid</span></div>
-          <div class="stat"><strong>1.9×</strong><span class="muted">LTV uplift</span></div>
+          <div class="stat"><strong>1.9×</strong><span class="muted">LTV</span></div>
         </div>
-        <p class="muted">Search + PMax with feature‑led ad groups and a new trial landing.</p>
       </article>
       <article class="card">
         <div class="ratio-9-16"><div class="fill" style="background-image:url('https://images.unsplash.com/photo-1529336953121-ad3a2f71b1a8?q=80&w=1200&auto=format&fit=crop');"></div></div>
@@ -170,108 +138,117 @@
           <div class="stat"><strong>₹240</strong><span class="muted">CPL</span></div>
           <div class="stat"><strong>3.1×</strong><span class="muted">ROAS</span></div>
         </div>
-        <p class="muted">Offer stack, WhatsApp lead routing, and landing page form trims.</p>
       </article>
     </div>
-  </section>  <!-- BLOGS (Ghost feed placeholder) -->  <section id="blogs" class="wrap" style="padding:36px 24px">
+  </section>  <!-- BLOGS (GhostCMS feed placeholder) -->  <section id="blogs" class="wrap" style="padding:28px 20px">
     <h2 class="title">Latest on the blog</h2>
     <p class="subtitle">Powered by GhostCMS — swap demo URL & key for your site.</p>
     <div id="blogGrid" class="grid cols-3"></div>
-  </section>  <!-- SOCIAL: Instagram Reels embeds -->  <section id="social" class="wrap" style="padding:36px 24px">
+  </section>  <!-- SOCIAL: Reels-style carousel (reliable demo) -->  <section id="social" class="wrap" style="padding:28px 20px">
     <h2 class="title">Social Highlights</h2>
-    <p class="subtitle">Recent Instagram Reels that show our creative angles.</p>
-    <div class="grid cols-3 ig-embed">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CxTjBf8r8H7/" data-instgrm-version="14" style="background:#101826;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:0;margin:0 auto;max-width:360px;width:100%"></blockquote>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Cwq9sSwa23n/" data-instgrm-version="14" style="background:#101826;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:0;margin:0 auto;max-width:360px;width:100%"></blockquote>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CtTz6k9K7kP/" data-instgrm-version="14" style="background:#101826;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:0;margin:0 auto;max-width:360px;width:100%"></blockquote>
+    <p class="subtitle">9:16 clips that mirror Instagram Reels (use your actual reel URLs later).</p>
+    <div class="card">
+      <div class="carousel" id="reelsCarousel">
+        <div class="carousel-track">
+          <div class="carousel-item">
+            <div class="ratio-9-16"><div class="fill" style="background-image:url('https://images.unsplash.com/photo-1524253482453-3fed8d2fe12b?q=80&w=1200&auto=format&fit=crop');"></div></div>
+          </div>
+          <div class="carousel-item">
+            <video src="https://filesamples.com/samples/video/mp4/sample_960x400_ocean_with_audio.mp4" playsinline muted autoplay loop></video>
+          </div>
+          <div class="carousel-item">
+            <div class="ratio-9-16"><div class="fill" style="background-image:url('https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1200&auto=format&fit=crop');"></div></div>
+          </div>
+        </div>
+        <div class="carousel-nav">
+          <button class="carousel-btn" data-dir="-1">‹</button>
+          <button class="carousel-btn" data-dir="1">›</button>
+        </div>
+      </div>
     </div>
-    <script async src="https://www.instagram.com/embed.js"></script>
-  </section>  <!-- TESTIMONIALS (with videos and 9:16 images) -->  <section id="testimonials" class="wrap" style="padding:36px 24px">
+  </section>  <!-- TESTIMONIALS: 9:16 carousels + video embeds -->  <section id="testimonials" class="wrap" style="padding:28px 20px">
     <h2 class="title">What clients say</h2>
-    <p class="subtitle">Short clips + quotes. Replace with your footage later.</p>
-    <div class="grid cols-3">
-      <div class="card">
-        <video src="https://filesamples.com/samples/video/mp4/sample_640x360.mp4" playsinline muted autoplay loop></video>
-        <p><strong>Subodh — BraveLabs</strong></p>
-        <p class="muted">“They took over our ad accounts and within 6 weeks our CPAs dropped while volume climbed. Clear comms, zero drama.”</p>
+    <p class="subtitle">Short quotes with 9:16 visuals and clips.</p><div class="grid cols-3">
+  <!-- Testimonial 1 -->
+  <div class="card">
+    <div class="carousel" data-carousel>
+      <div class="carousel-track">
+        <div class="carousel-item"><div class="ratio-9-16"><div class="fill" style="background-image:url('https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=1200&auto=format&fit=crop');"></div></div></div>
+        <div class="carousel-item"><video src="https://filesamples.com/samples/video/mp4/sample_640x360.mp4" playsinline muted autoplay loop></video></div>
       </div>
-      <div class="card">
-        <div class="ratio-9-16"><div class="fill" style="background-image:url('https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=1200&auto=format&fit=crop');"></div></div>
-        <p><strong>Rhea — Oak & Co</strong></p>
-        <p class="muted">“Creative angles + landing tweaks = steady ROAS above target. Reporting actually useful.”</p>
-      </div>
-      <div class="card">
-        <video src="https://filesamples.com/samples/video/mp4/sample_960x400_ocean_with_audio.mp4" playsinline muted autoplay loop></video>
-        <p><strong>Arjun — NeonFit</strong></p>
-        <p class="muted">“We finally know what’s working and why. Weekly experiments keep us moving.”</p>
-      </div>
+      <div class="carousel-nav"><button class="carousel-btn" data-dir="-1">‹</button><button class="carousel-btn" data-dir="1">›</button></div>
     </div>
-  </section>  <!-- PRICING / PLANS (Razorpay Payment Page) -->  <section id="pricing" class="wrap" style="padding:36px 24px">
-    <h2 class="title">Simple Plans</h2>
-    <p class="subtitle">Pay via Razorpay. On success we hand you off to WhatsApp for onboarding.</p>
-    <div class="grid cols-3">
-      <div class="card">
-        <div class="kicker">Starter</div>
-        <div class="price">₹2,999/mo</div>
-        <ul class="muted" style="line-height:1.9">
-          <li>Meta or Google (1 channel)</li>
-          <li>4 creatives/mo</li>
-          <li>Weekly report</li>
-        </ul>
-        <a class="btn" href="https://rzp.io/l/your-payment-page" target="_blank">Subscribe</a>
+    <p><strong>Subodh — BraveLabs</strong></p>
+    <p class="muted">“CPAs down, volume up within 6 weeks. Clear comms, zero drama.”</p>
+  </div>
+
+  <!-- Testimonial 2 -->
+  <div class="card">
+    <div class="carousel" data-carousel>
+      <div class="carousel-track">
+        <div class="carousel-item"><div class="ratio-9-16"><div class="fill" style="background-image:url('https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=1200&auto=format&fit=crop');"></div></div></div>
+        <div class="carousel-item"><video src="https://filesamples.com/samples/video/mp4/sample_960x400_ocean_with_audio.mp4" playsinline muted autoplay loop></video></div>
       </div>
-      <div class="card">
-        <div class="kicker">Growth</div>
-        <div class="price">₹6,999/mo</div>
-        <ul class="muted" style="line-height:1.9">
-          <li>Meta + Google</li>
-          <li>8 creatives/mo</li>
-          <li>Landing page tweaks</li>
-        </ul>
-        <a class="btn" href="https://rzp.io/l/your-payment-page" target="_blank">Subscribe</a>
+      <div class="carousel-nav"><button class="carousel-btn" data-dir="-1">‹</button><button class="carousel-btn" data-dir="1">›</button></div>
+    </div>
+    <p><strong>Rhea — Oak & Co</strong></p>
+    <p class="muted">“Creative angles + landing tweaks = ROAS above target.”</p>
+  </div>
+
+  <!-- Testimonial 3 -->
+  <div class="card">
+    <div class="carousel" data-carousel>
+      <div class="carousel-track">
+        <div class="carousel-item"><div class="ratio-9-16"><div class="fill" style="background-image:url('https://images.unsplash.com/photo-1545996124-0501ebae84d5?q=80&w=1200&auto=format&fit=crop');"></div></div></div>
+        <div class="carousel-item"><video src="https://filesamples.com/samples/video/mp4/sample_640x360.mp4" playsinline muted autoplay loop></video></div>
       </div>
-      <div class="card">
-        <div class="kicker">Pro</div>
-        <div class="price">₹12,999/mo</div>
-        <ul class="muted" style="line-height:1.9">
-          <li>Full stack + Email</li>
-          <li>Unlimited tests</li>
-          <li>Slack support</li>
-        </ul>
-        <a class="btn" href="https://rzp.io/l/your-payment-page" target="_blank">Subscribe</a>
-      </div>
-    </div><div class="card" style="margin-top:14px">
-  <span class="kicker">After Payment</span>
-  <p class="muted">Set your Razorpay success redirect to <code>https://yourdomain.com/#paid=1</code>. Your onboarding WhatsApp button unlocks on the dashboard below when <code>#paid=1</code> is present.</p>
+      <div class="carousel-nav"><button class="carousel-btn" data-dir="-1">‹</button><button class="carousel-btn" data-dir="1">›</button></div>
+    </div>
+    <p><strong>Arjun — NeonFit</strong></p>
+    <p class="muted">“We finally know what’s working and why. Weekly experiments keep us moving.”</p>
+  </div>
 </div>
 
-  </section>  <!-- CONTACT + DASHBOARD HANDOFF -->  <section id="contact" class="wrap" style="padding:36px 24px">
+  </section>  <!-- PRICING: SINGLE PLAN ONLY -->  <section id="pricing" class="wrap" style="padding:28px 20px">
+    <h2 class="title">One simple plan</h2>
+    <p class="subtitle">Everything you need to run ads and grow revenue.</p>
+    <div class="card" style="display:grid;grid-template-columns:1fr;gap:12px;align-items:center">
+      <div>
+        <div class="kicker">Monthly</div>
+        <div class="price">₹2,999 / month</div>
+        <ul class="muted" style="line-height:1.9;margin:8px 0 0 16px">
+          <li>Meta or Google (choose one)</li>
+          <li>4 creatives / month</li>
+          <li>Weekly performance report</li>
+          <li>Landing page suggestions</li>
+        </ul>
+      </div>
+      <a class="btn ok" href="https://rzp.io/l/your-payment-page" target="_blank">Subscribe</a>
+    </div>
+  </section>  <!-- CONTACT + WHATSAPP HANDOFF -->  <section id="contact" class="wrap" style="padding:28px 20px">
     <h2 class="title">Contact</h2>
     <div class="grid cols-2">
       <div class="card">
         <p class="subtitle">Fastest way? WhatsApp.</p>
         <a id="waMain" class="btn ok" href="#" target="_blank">Chat on WhatsApp</a>
-        <div style="height:10px"></div>
-        <div class="muted">Or find us on <a href="#">Instagram</a> • <a href="#">Twitter</a> • <a href="#">LinkedIn</a></div>
+        <div class="muted" style="margin-top:8px">Or find us on <a href="#">Instagram</a> • <a href="#">Twitter</a> • <a href="#">LinkedIn</a></div>
       </div>
       <div class="card">
-        <span class="kicker">Your Dashboard</span>
-        <p class="muted">Pay first, then this button appears for immediate onboarding.</p>
-        <a id="waDash" class="btn hide" target="_blank" href="#">Open WhatsApp</a>
-        <div id="paidPill" class="pill hide" style="margin-top:10px"><span class="kicker">Payment Verified</span> Ready for onboarding</div>
+        <span class="kicker">Why us</span>
+        <p class="muted">Clear goals, fast iterations, and transparent numbers. We keep it simple and scale what works.</p>
       </div>
     </div>
   </section>  <footer class="wrap">
     <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
       <div>© <span id="yr"></span> Nova Ads</div>
       <span class="muted">•</span>
-      <div class="muted">Built for demo — stock .jpg images</div>
+      <div class="muted">Demo — stock .jpg images + sample mp4 clips</div>
     </div>
   </footer>  <script>
     // ===== CONFIG =====
     const WHATSAPP_NUMBER = '918102253186';
     const WHATSAPP_TEXT   = encodeURIComponent('Hey! We want to scale ads. Can we talk?');
-    const GHOST_URL       = 'https://demo.ghost.io'; // replace with your Ghost site URL (no trailing slash)
+    const GHOST_URL       = 'https://demo.ghost.io'; // replace with your Ghost site URL
     const GHOST_CONTENT_KEY = '22444f78447824223cefc48062'; // replace with your Content API key
 
     // ===== UTIL =====
@@ -284,15 +261,6 @@
     // WhatsApp links
     const waHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_TEXT}`;
     $('#waMain').href = waHref;
-    $('#waDash').href = waHref;
-
-    // Payment success flag via URL hash: #paid=1
-    if (location.hash.includes('paid=1')) localStorage.setItem('paid','1');
-    const paid = localStorage.getItem('paid') === '1';
-    if (paid){
-      $('#waDash').classList.remove('hide');
-      $('#paidPill').classList.remove('hide');
-    }
 
     // ===== BLOG FEED (Ghost Content API) =====
     async function loadGhost(){
@@ -318,5 +286,24 @@
       }
     }
     loadGhost();
+
+    // ===== GENERIC CAROUSEL (supports img/video) =====
+    function initCarousel(root){
+      const track = root.querySelector('.carousel-track');
+      const items = [...track.children];
+      let index = 0;
+      const buttons = root.querySelectorAll('.carousel-btn');
+      function update(){ track.style.transform = `translateX(${-index*100}%)`; }
+      buttons.forEach(btn=>btn.addEventListener('click',()=>{
+        const dir = Number(btn.dataset.dir);
+        index = (index + dir + items.length) % items.length;
+        update();
+      }));
+      update();
+    }
+    // Reels carousel
+    initCarousel(document.getElementById('reelsCarousel'));
+    // Testimonial carousels
+    document.querySelectorAll('[data-carousel]').forEach(initCarousel);
   </script></body>
 </html>
