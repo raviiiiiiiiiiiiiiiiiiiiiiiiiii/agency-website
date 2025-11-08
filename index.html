@@ -113,11 +113,29 @@ background:var(--bg-soft);
 
 .blog-frame{width:100%;min-height:700px;border:1px solid var(--border);border-radius:16px}
 
-.pricing .grid{grid-template-columns:1fr}
-.price-card{display:flex;flex-direction:column;gap:10px}
+.pricing .grid{
+grid-template-columns:1fr;
+display:flex;
+justify-content:center;
+}
+.price-card{
+display:flex;
+flex-direction:column;
+gap:14px;
+max-width:480px;
+margin:auto;
+padding:22px;
+box-shadow:0 4px 18px rgba(0,0,0,0.25);
+border-radius:18px;
+}
+
 .price{font-size:1.6rem;font-weight:800}
 .features{color:var(--muted);padding-left:18px}
 .features li{margin:6px 0}
+
+.card-body a.btn{
+margin-top:14px;
+}
 
 .contact-actions{display:flex;gap:12px;flex-wrap:wrap}
 .icon-btn{
@@ -138,6 +156,7 @@ nav ul{display:none}
 .services .grid,.portfolio .grid,.social .grid,.team .grid,.pricing .grid{grid-template-columns:1fr}
 section{padding:60px 0}
 #home{padding:90px 0 70px}
+.price-card{max-width:92%;}
 }
 </style>
 </head>
@@ -153,7 +172,7 @@ section{padding:60px 0}
 <li><a href="#pricing" class="nav-link">Pricing</a></li>
 <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
 <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
-<li><a href="#blogs" class="nav-link">Blogs</a></li>
+<li><a href="/blogs" class="nav-link">Blogs</a></li>
 <li><a href="#social" class="nav-link">Social</a></li>
 <li><a href="#contact" class="nav-link">Contact</a></li>
 </ul>
@@ -166,7 +185,7 @@ section{padding:60px 0}
 <a href="#pricing" class="nav-link">Pricing</a>
 <a href="#portfolio" class="nav-link">Portfolio</a>
 <a href="#testimonials" class="nav-link">Testimonials</a>
-<a href="#blogs" class="nav-link">Blogs</a>
+<a href="/blogs" class="nav-link">Blogs</a>
 <a href="#social" class="nav-link">Social</a>
 <a href="#contact" class="nav-link">Contact</a>
 </div>
@@ -301,7 +320,7 @@ section{padding:60px 0}
 <div class="card-body">
 <h3>How to Improve Your Meta Ads Performance Fast</h3>
 <p>Simple tweaks in creatives, hooks, and segmentation can drastically reduce CPA.</p>
-<a href="/blogs" class="btn">Read More</a>
+<a href="/blogs" class="btn" style="margin-top:16px;">Read More</a>
 </div>
 </div>
 
