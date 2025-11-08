@@ -4,19 +4,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nova Agency — Portfolio • Blogs • Subscriptions</title>
+  <title>Nova Ads — Performance Marketing Agency</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0b0f15;--surface:#101826;--muted:#8b94a7;--text:#e5e7eb;--brand:#60a5fa;--brand-2:#22c55e;--ring:rgba(255,255,255,.08)
+      --bg:#0b0f15;--surface:#0f1726;--muted:#8b94a7;--text:#e5e7eb;--brand:#60a5fa;--brand-2:#22c55e;--ring:rgba(255,255,255,.08)
     }
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text);}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text)}
     a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
+    img,video{max-width:100%;display:block;border-radius:12px}
     .wrap{max-width:1180px;margin:0 auto;padding:24px}
     header{position:sticky;top:0;z-index:30;background:rgba(11,15,21,.65);backdrop-filter:blur(10px);border-bottom:1px solid var(--ring)}
     nav{display:flex;gap:18px;align-items:center;padding:12px 24px}
@@ -35,15 +35,14 @@
     .muted{color:var(--muted)}
     .kicker{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#9aa3b5}
     .hero{padding:64px 24px 32px;display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
-    .tag{font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--ring);background:rgba(96,165,250,.08)}
-    .section{padding:36px 24px}
     .title{margin:0 0 12px;font-size:32px}
     .subtitle{margin:0 0 18px;color:var(--muted)}
-    .thumb{height:180px;border-radius:12px;background:#0a0f18 url('https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat}
-    .avatar{width:56px;height:56px;border-radius:50%;object-fit:cover;border:1px solid var(--ring)}
+    .pill{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.06);border:1px solid var(--ring);border-radius:999px;padding:6px 10px}
+    .ratio-9-16{position:relative;width:100%;padding-top:177.78%} /* 16/9 inverted */
+    .ratio-9-16 > .fill{position:absolute;inset:0;background:#0a0f18 center/cover no-repeat;border-radius:12px}
+    .stat{display:flex;flex-direction:column;gap:6px;padding:14px;border:1px solid var(--ring);border-radius:12px;background:rgba(255,255,255,.03)}
     .price{font-size:28px;font-weight:800}
     .hide{display:none!important}
-    .pill{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.06);border:1px solid var(--ring);border-radius:999px;padding:6px 10px}
     footer{border-top:1px solid var(--ring);padding:28px}
     @media (max-width: 980px){
       .hero{grid-template-columns:1fr}
@@ -55,119 +54,169 @@
       .grid.cols-2,.grid.cols-3,.grid.cols-4{grid-template-columns:1fr}
     }
     /* instagram embed container fix for dark bg */
-    .ig-embed{--ig-bg:#0e1522;}
-    .ig-embed blockquote{background:var(--surface)!important;border-color:var(--ring)!important;border-radius:16px!important}
+    .ig-embed blockquote{background:var(--surface)!important;border:1px solid var(--ring)!important;border-radius:16px!important}
   </style>
 </head>
 <body>
   <header>
     <nav class="wrap">
-      <div class="brand">Nova Agency</div>
+      <div class="brand">Nova Ads</div>
       <a class="hide-sm" href="#home">Home</a>
-      <a class="hide-sm" href="#portfolio">Portfolio</a>
-      <a class="hide-sm" href="#blogs">Blogs</a>
+      <a class="hide-sm" href="#services">Services</a>
+      <a class="hide-sm" href="#case-studies">Case Studies</a>
+      <a class="hide-sm" href="#blogs">Blog</a>
       <a class="hide-sm" href="#social">Social</a>
-      <a class="hide-sm" href="#pricing">Subscribe</a>
+      <a class="hide-sm" href="#pricing">Plans</a>
       <a class="hide-sm" href="#contact">Contact</a>
       <div class="spacer"></div>
-      <a href="#pricing" class="btn">Get Started</a>
+      <a href="#contact" class="btn">Book a Call</a>
     </nav>
   </header>  <!-- HERO -->  <section id="home" class="wrap hero">
     <div class="card" style="display:flex;flex-direction:column;gap:10px">
-      <span class="kicker">Design • Build • Grow</span>
-      <h1 style="margin:0;font-size:42px;line-height:1.08">We ship fast, clean websites that convert.</h1>
-      <p class="muted">Showcase your work, publish blogs via GhostCMS, and sell subscriptions with Razorpay. After payment, users get a WhatsApp handoff for white‑glove onboarding.</p>
+      <span class="kicker">Performance Marketing</span>
+      <h1 style="margin:0;font-size:42px;line-height:1.08">We turn ad spend into predictable revenue.</h1>
+      <p class="muted">Meta & Google Ads, funnels, CRO and reporting — packaged in clean monthly plans. We build, test, and scale until the numbers work. No fluff, just results.</p>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <a href="#portfolio" class="btn">See Portfolio</a>
-        <a href="#pricing" class="btn ghost">View Plans</a>
+        <a href="#services" class="btn">What we do</a>
+        <a href="#case-studies" class="btn ghost">See wins</a>
       </div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
-        <span class="pill"><span class="tag">SEO Ready</span> <span class="muted">•</span> Blazing fast</span>
-        <span class="pill"><span class="tag">GhostCMS</span> <span class="muted">•</span> Easy blogging</span>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+        <span class="pill">Avg ROAS 3.2× (example)</span>
+        <span class="pill">Weekly reports</span>
+        <span class="pill">Landing page tweaks</span>
       </div>
     </div>
     <div class="card">
-      <div class="thumb" style="height:320px;background-image:url('https://images.unsplash.com/photo-1528460033278-a6ba57020470?q=80&w=1200&auto=format&fit=crop');"></div>
-      <div class="muted" style="margin-top:10px">Demo UI — stock imagery (.jpg)</div>
+      <div class="ratio-9-16">
+        <div class="fill" style="background-image:url('https://images.unsplash.com/photo-1551281044-8b29d3b4f36b?q=80&w=1200&auto=format&fit=crop');"></div>
+      </div>
+      <div class="muted" style="margin-top:10px">Demo 9:16 creative — stock .jpg</div>
     </div>
-  </section>  <!-- PORTFOLIO -->  <section id="portfolio" class="wrap section">
-    <h2 class="title">Portfolio</h2>
-    <p class="subtitle">A few recent builds. Real case studies replace the placeholders later.</p>
+  </section>  <!-- SERVICES -->  <section id="services" class="wrap" style="padding:36px 24px">
+    <h2 class="title">Services that move the needle</h2>
+    <p class="subtitle">Everything required to acquire, convert, and retain — under one roof.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Meta Ads</h3>
+        <p class="muted">Full‑funnel campaigns for awareness, retargeting, and conversions. Creative testing, CBO/ABO structures, and audience experiments.</p>
+        <ul class="muted" style="line-height:1.9">
+          <li>Statically and UGC creatives</li>
+          <li>Retargeting stacks</li>
+          <li>A/B creative + copy</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Google Ads</h3>
+        <p class="muted">Search, PMax, and YouTube. Query sculpting, negative keywords, and feed optimization for e‑commerce & SaaS.</p>
+        <ul class="muted" style="line-height:1.9">
+          <li>Keyword mapping</li>
+          <li>Offer‑led ad groups</li>
+          <li>Budget automation</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>CRO & Landing Pages</h3>
+        <p class="muted">Rapid experiments on headlines, hooks, social proof, and forms to shave friction and lift CVR.</p>
+        <ul class="muted" style="line-height:1.9">
+          <li>Heuristic audits</li>
+          <li>Heatmap insights</li>
+          <li>Offer + pricing tests</li>
+        </ul>
+      </div>
+    </div><div class="grid cols-3" style="margin-top:16px">
+  <div class="card">
+    <h3>Analytics & Reporting</h3>
+    <p class="muted">GA4, pixel hygiene, UTMs, and weekly performance dashboards so the story is always clear.</p>
+  </div>
+  <div class="card">
+    <h3>Email & Retention</h3>
+    <p class="muted">Flows and campaigns that monetize traffic you already paid for. Klaviyo or Mailchimp.</p>
+  </div>
+  <div class="card">
+    <h3>Creative Production</h3>
+    <p class="muted">9:16 hooks, carousels, and motion cut‑downs aligned to the angle and offer. We ship options weekly.</p>
+  </div>
+</div>
+
+  </section>  <!-- CASE STUDIES / METRICS -->  <section id="case-studies" class="wrap" style="padding:36px 24px">
+    <h2 class="title">Case Studies</h2>
+    <p class="subtitle">Real brands, real numbers (example data for layout).</p>
     <div class="grid cols-3">
       <article class="card">
-        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="SaaS Landing" style="border-radius:12px">
-        <h3>ZenTrack — SaaS Landing</h3>
-        <p class="muted">Revamp increased sign‑ups by 27% in first month.</p>
+        <div class="ratio-9-16"><div class="fill" style="background-image:url('https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop');"></div></div>
+        <h3>DTC Apparel</h3>
+        <div class="grid cols-3">
+          <div class="stat"><strong>+64%</strong><span class="muted">Rev in 60 days</span></div>
+          <div class="stat"><strong>3.4×</strong><span class="muted">ROAS</span></div>
+          <div class="stat"><strong>-28%</strong><span class="muted">CPC</span></div>
+        </div>
+        <p class="muted">Scaled Meta Retargeting + YouTube prospecting. Tight offers and fresh creatives every week.</p>
       </article>
       <article class="card">
-        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Commerce" style="border-radius:12px">
-        <h3>Oak & Co — Commerce</h3>
-        <p class="muted">Rebuild improved checkout speed and AOV.</p>
+        <div class="ratio-9-16"><div class="fill" style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop');"></div></div>
+        <h3>SaaS Productivity</h3>
+        <div class="grid cols-3">
+          <div class="stat"><strong>-42%</strong><span class="muted">CAC</span></div>
+          <div class="stat"><strong>+31%</strong><span class="muted">Free→Paid</span></div>
+          <div class="stat"><strong>1.9×</strong><span class="muted">LTV uplift</span></div>
+        </div>
+        <p class="muted">Search + PMax with feature‑led ad groups and a new trial landing.</p>
       </article>
       <article class="card">
-        <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1200&auto=format&fit=crop" alt="Portfolio" style="border-radius:12px">
-        <h3>NeonFit — Brand Site</h3>
-        <p class="muted">New brand site with blog & lead magnets.</p>
+        <div class="ratio-9-16"><div class="fill" style="background-image:url('https://images.unsplash.com/photo-1529336953121-ad3a2f71b1a8?q=80&w=1200&auto=format&fit=crop');"></div></div>
+        <h3>Local Services</h3>
+        <div class="grid cols-3">
+          <div class="stat"><strong>+118%</strong><span class="muted">Leads</span></div>
+          <div class="stat"><strong>₹240</strong><span class="muted">CPL</span></div>
+          <div class="stat"><strong>3.1×</strong><span class="muted">ROAS</span></div>
+        </div>
+        <p class="muted">Offer stack, WhatsApp lead routing, and landing page form trims.</p>
       </article>
-    </div><h3 style="margin:26px 0 10px">Testimonials</h3>
-<div class="grid cols-3">
-  <div class="card" style="display:flex;gap:12px;align-items:center">
-    <img class="avatar" src="https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=400&auto=format&fit=crop" alt="Avatar">
-    <div><strong>Subodh</strong><div class="muted">Founder, BraveLabs</div></div>
-  </div>
-  <div class="card" style="display:flex;gap:12px;align-items:center">
-    <img class="avatar" src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=400&auto=format&fit=crop" alt="Avatar">
-    <div><strong>Rhea</strong><div class="muted">Growth Lead, Oak&Co</div></div>
-  </div>
-  <div class="card" style="display:flex;gap:12px;align-items:center">
-    <img class="avatar" src="https://images.unsplash.com/photo-1546525848-3ce03ca516f6?q=80&w=400&auto=format&fit=crop" alt="Avatar">
-    <div><strong>Arjun</strong><div class="muted">CEO, NeonFit</div></div>
-  </div>
-</div>
-
-<h3 style="margin:26px 0 10px">Team</h3>
-<div class="grid cols-4">
-  <div class="card" style="text-align:center">
-    <img class="avatar" style="margin:0 auto 8px" src="https://images.unsplash.com/photo-1545996124-0501ebae84d5?q=80&w=400&auto=format&fit=crop" alt="Ravi">
-    <strong>Ravi Sharma</strong><div class="muted">Founder • Product</div>
-  </div>
-  <div class="card" style="text-align:center">
-    <img class="avatar" style="margin:0 auto 8px" src="https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=400&auto=format&fit=crop" alt="Aayush">
-    <strong>Aayush</strong><div class="muted">Frontend</div>
-  </div>
-  <div class="card" style="text-align:center">
-    <img class="avatar" style="margin:0 auto 8px" src="https://images.unsplash.com/photo-1548544149-4835eabf50aa?q=80&w=400&auto=format&fit=crop" alt="Priya">
-    <strong>Priya</strong><div class="muted">Design</div>
-  </div>
-  <div class="card" style="text-align:center">
-    <img class="avatar" style="margin:0 auto 8px" src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=400&auto=format&fit=crop" alt="Kabir">
-    <strong>Kabir</strong><div class="muted">Marketing</div>
-  </div>
-</div>
-
-  </section>  <!-- BLOGS (GhostCMS feed) -->  <section id="blogs" class="wrap section">
-    <h2 class="title">Latest from the blog</h2>
-    <p class="subtitle">Powered by GhostCMS. Replace demo URL & key with your own.</p>
+    </div>
+  </section>  <!-- BLOGS (Ghost feed placeholder) -->  <section id="blogs" class="wrap" style="padding:36px 24px">
+    <h2 class="title">Latest on the blog</h2>
+    <p class="subtitle">Powered by GhostCMS — swap demo URL & key for your site.</p>
     <div id="blogGrid" class="grid cols-3"></div>
-  </section>  <!-- SOCIAL: Instagram Reels embeds -->  <section id="social" class="wrap section">
+  </section>  <!-- SOCIAL: Instagram Reels embeds -->  <section id="social" class="wrap" style="padding:36px 24px">
     <h2 class="title">Social Highlights</h2>
-    <p class="subtitle">Recent Instagram Reels we want visitors to see.</p>
-    <div class="grid cols-2 ig-embed">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CxTjBf8r8H7/" data-instgrm-version="14" style="background:#101826;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:0;margin:0 auto;max-width:540px;width:100%"></blockquote>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Cwq9sSwa23n/" data-instgrm-version="14" style="background:#101826;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:0;margin:0 auto;max-width:540px;width:100%"></blockquote>
+    <p class="subtitle">Recent Instagram Reels that show our creative angles.</p>
+    <div class="grid cols-3 ig-embed">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CxTjBf8r8H7/" data-instgrm-version="14" style="background:#101826;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:0;margin:0 auto;max-width:360px;width:100%"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Cwq9sSwa23n/" data-instgrm-version="14" style="background:#101826;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:0;margin:0 auto;max-width:360px;width:100%"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CtTz6k9K7kP/" data-instgrm-version="14" style="background:#101826;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:0;margin:0 auto;max-width:360px;width:100%"></blockquote>
     </div>
     <script async src="https://www.instagram.com/embed.js"></script>
-  </section>  <!-- PRICING / SUBSCRIPTIONS (Razorpay Payment Page) -->  <section id="pricing" class="wrap section">
+  </section>  <!-- TESTIMONIALS (with videos and 9:16 images) -->  <section id="testimonials" class="wrap" style="padding:36px 24px">
+    <h2 class="title">What clients say</h2>
+    <p class="subtitle">Short clips + quotes. Replace with your footage later.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <video src="https://filesamples.com/samples/video/mp4/sample_640x360.mp4" playsinline muted autoplay loop></video>
+        <p><strong>Subodh — BraveLabs</strong></p>
+        <p class="muted">“They took over our ad accounts and within 6 weeks our CPAs dropped while volume climbed. Clear comms, zero drama.”</p>
+      </div>
+      <div class="card">
+        <div class="ratio-9-16"><div class="fill" style="background-image:url('https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=1200&auto=format&fit=crop');"></div></div>
+        <p><strong>Rhea — Oak & Co</strong></p>
+        <p class="muted">“Creative angles + landing tweaks = steady ROAS above target. Reporting actually useful.”</p>
+      </div>
+      <div class="card">
+        <video src="https://filesamples.com/samples/video/mp4/sample_960x400_ocean_with_audio.mp4" playsinline muted autoplay loop></video>
+        <p><strong>Arjun — NeonFit</strong></p>
+        <p class="muted">“We finally know what’s working and why. Weekly experiments keep us moving.”</p>
+      </div>
+    </div>
+  </section>  <!-- PRICING / PLANS (Razorpay Payment Page) -->  <section id="pricing" class="wrap" style="padding:36px 24px">
     <h2 class="title">Simple Plans</h2>
-    <p class="subtitle">Pay via Razorpay. We’ll redirect to WhatsApp after success.</p>
+    <p class="subtitle">Pay via Razorpay. On success we hand you off to WhatsApp for onboarding.</p>
     <div class="grid cols-3">
       <div class="card">
         <div class="kicker">Starter</div>
         <div class="price">₹2,999/mo</div>
         <ul class="muted" style="line-height:1.9">
-          <li>1 website</li>
-          <li>Blog publishing</li>
-          <li>Email support</li>
+          <li>Meta or Google (1 channel)</li>
+          <li>4 creatives/mo</li>
+          <li>Weekly report</li>
         </ul>
         <a class="btn" href="https://rzp.io/l/your-payment-page" target="_blank">Subscribe</a>
       </div>
@@ -175,9 +224,9 @@
         <div class="kicker">Growth</div>
         <div class="price">₹6,999/mo</div>
         <ul class="muted" style="line-height:1.9">
-          <li>Priority changes</li>
-          <li>Blog + SEO help</li>
-          <li>Monthly consult</li>
+          <li>Meta + Google</li>
+          <li>8 creatives/mo</li>
+          <li>Landing page tweaks</li>
         </ul>
         <a class="btn" href="https://rzp.io/l/your-payment-page" target="_blank">Subscribe</a>
       </div>
@@ -185,43 +234,43 @@
         <div class="kicker">Pro</div>
         <div class="price">₹12,999/mo</div>
         <ul class="muted" style="line-height:1.9">
-          <li>Unlimited requests</li>
-          <li>Faster turnaround</li>
-          <li>Strategy sessions</li>
+          <li>Full stack + Email</li>
+          <li>Unlimited tests</li>
+          <li>Slack support</li>
         </ul>
         <a class="btn" href="https://rzp.io/l/your-payment-page" target="_blank">Subscribe</a>
       </div>
     </div><div class="card" style="margin-top:14px">
   <span class="kicker">After Payment</span>
-  <p class="muted">Set your Razorpay Payment Page success redirect to <code>https://yourdomain.com/#paid=1</code>. The dashboard below will unlock a WhatsApp button when <code>#paid=1</code> is present.</p>
+  <p class="muted">Set your Razorpay success redirect to <code>https://yourdomain.com/#paid=1</code>. Your onboarding WhatsApp button unlocks on the dashboard below when <code>#paid=1</code> is present.</p>
 </div>
 
-  </section>  <!-- CONTACT + DASHBOARD WHATSAPP HANDOFF -->  <section id="contact" class="wrap section">
+  </section>  <!-- CONTACT + DASHBOARD HANDOFF -->  <section id="contact" class="wrap" style="padding:36px 24px">
     <h2 class="title">Contact</h2>
     <div class="grid cols-2">
       <div class="card">
         <p class="subtitle">Fastest way? WhatsApp.</p>
         <a id="waMain" class="btn ok" href="#" target="_blank">Chat on WhatsApp</a>
         <div style="height:10px"></div>
-        <div class="muted">Prefer social? <a href="#">Instagram</a> • <a href="#">Twitter</a> • <a href="#">LinkedIn</a></div>
+        <div class="muted">Or find us on <a href="#">Instagram</a> • <a href="#">Twitter</a> • <a href="#">LinkedIn</a></div>
       </div>
       <div class="card">
         <span class="kicker">Your Dashboard</span>
-        <p class="muted">If you’ve paid, the WhatsApp onboarding button will appear here.</p>
+        <p class="muted">Pay first, then this button appears for immediate onboarding.</p>
         <a id="waDash" class="btn hide" target="_blank" href="#">Open WhatsApp</a>
-        <div id="paidPill" class="pill hide" style="margin-top:10px"><span class="tag">Payment Verified</span> Ready for onboarding</div>
+        <div id="paidPill" class="pill hide" style="margin-top:10px"><span class="kicker">Payment Verified</span> Ready for onboarding</div>
       </div>
     </div>
   </section>  <footer class="wrap">
     <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
-      <div>© <span id="yr"></span> Nova Agency</div>
+      <div>© <span id="yr"></span> Nova Ads</div>
       <span class="muted">•</span>
       <div class="muted">Built for demo — stock .jpg images</div>
     </div>
   </footer>  <script>
     // ===== CONFIG =====
-    const WHATSAPP_NUMBER = '918102253186'; // change to your number (no +)
-    const WHATSAPP_TEXT   = encodeURIComponent('Hey! I just subscribed. Can we start onboarding?');
+    const WHATSAPP_NUMBER = '918102253186';
+    const WHATSAPP_TEXT   = encodeURIComponent('Hey! We want to scale ads. Can we talk?');
     const GHOST_URL       = 'https://demo.ghost.io'; // replace with your Ghost site URL (no trailing slash)
     const GHOST_CONTENT_KEY = '22444f78447824223cefc48062'; // replace with your Content API key
 
@@ -248,6 +297,7 @@
     // ===== BLOG FEED (Ghost Content API) =====
     async function loadGhost(){
       const grid = $('#blogGrid');
+      if (!grid) return;
       try{
         const res = await fetch(`${GHOST_URL}/ghost/api/content/posts/?key=${GHOST_CONTENT_KEY}&fields=title,feature_image,excerpt,url,published_at&limit=6`);
         const data = await res.json();
@@ -255,7 +305,7 @@
         if(!posts.length){ grid.innerHTML = '<div class="card">No posts yet.</div>'; return; }
         posts.forEach(p =>{
           const card = el('article',{className:'card'});
-          const img = el('img',{src:p.feature_image||'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop',alt:p.title,style:'border-radius:12px'});
+          const img = el('img',{src:p.feature_image||'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop',alt:p.title});
           const h   = el('h3'); h.textContent = p.title;
           const ex  = el('p',{className:'muted'}); ex.textContent = p.excerpt||'';
           const a   = el('a',{className:'btn ghost',href:p.url,target:'_blank'}); a.textContent = 'Read →';
